@@ -1,5 +1,8 @@
 <template>
-       <Toast class="w-100" group="tl" />
+       <div>
+        <div class="w-full flex">
+        <Toast group="tl" />
+        </div>
      <div class="w-full flex items-center gap-2" style=" position: absolute; top: 13%; z-index: 2; padding: 2%;">
            <div class="w-12 h-12 rounded-full" :style="{backgroundColor:bgcol}" ></div> <p class="text-white text-lg">{{ name }}</p>
     </div>
@@ -25,12 +28,13 @@
        
       </div>
     </div>
+  </div>
   </template>
   
   <script setup>
   import { ref, computed, watch, onMounted } from "vue";
   import { useToast } from 'primevue/usetoast';
-import { useConfetti } from '~/composables/useConfetti';
+  import { useConfetti } from '~/composables/useConfetti';
   const toast = useToast();
   const { fireConfetti } = useConfetti();
 
